@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int lonelyinteger(int n, int* a) {
+    int result = 0;
+    for (int i = 0; i < n; i++) {
+        result ^= a[i];
+    }
+    return result;
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int* a = malloc(n * sizeof(int));
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    int result = lonelyinteger(n, a);
+    printf("%d\n", result);
+
+    free(a);
+    return 0;
+}
+
